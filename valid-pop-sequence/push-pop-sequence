@@ -1,0 +1,27 @@
+Problem Statement : Check if the second sequence is the corresponding pop sequence of the first push sequence.
+					Push sequence [a,b,c,d,e]
+					Pop sequence [d,e,c,b,a]
+
+
+Solution :
+
+function isValidPopSeq(pushSeq, popSeq) {
+	if (pushSeq === null || popSeq === null) return false;
+	if (pushSeq.length != popSeq.length) return false;
+
+	var temp = [];
+	var pu = 0;
+	var po = 0;
+	var l = pushSeq.length;
+	temp.push(pushSeq[pu]);
+
+	while (po < l && pu < l) {
+		while ((temp[temp.length - 1] != popSeq[po]) && pu < l) {
+			pu++;
+			temp.push(pushSeq[pu]);
+		}
+		temp.pop();
+		po++;
+	}
+	return temp.length == 0;
+}
