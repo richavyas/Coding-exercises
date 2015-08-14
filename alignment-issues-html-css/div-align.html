@@ -1,0 +1,109 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>Align Divs</title>
+		<style>
+			@font-face { 
+		        font-family: 'Open Sans'; 
+		        font-style: normal; 
+		        font-weight: 300; 
+		        src: local('Open Sans Light'), local('OpenSans-Light'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/DXI1ORHCpsQm3Vp6mXoaTaRDOzjiPcYnFooOUGCOsRk.woff) format('woff');
+		    }
+
+			body {
+        		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        		font-family: 'Open Sans';
+        		font-size: 13px;
+        		background-color: #ECEEEF;
+      		}
+
+      		header h1{
+      			text-align: center;
+      		}
+
+		    .outer {
+			    width: 100%;
+			    border: solid 1px #7E7A7E; 
+        		border-radius: 2px;
+			    position: relative;
+			    margin-top: 10px;
+			}
+
+			.inner-1 {
+			        width: 50%;
+			        display: inline-block;
+			        height: 20px;
+			        background-color: #3D7350;
+			}
+
+			.inner-2 {
+					width: 50%;
+			        display: inline-block;
+			        height: 20px;
+			        background-color: #82BF65;
+			}
+
+			.container {
+				margin-top: 10px;
+			    width: 100%;
+			    border: solid 1px black;
+			    position: relative;
+			}
+
+			.inner-left {
+			        width: 100px;
+			        display: inline-block;
+			        height: 20px;
+			        background-color: grey;
+			}
+
+			.inner-right {
+					display: inline-block;
+			        height: 20px;
+			        background-color: pink;
+			        position: absolute;
+			        left: 100px;
+			        right: 0;
+			}
+		</style>
+	</head>
+	<header>
+		<h1>Div Alignment Issues and style fixes</h1>
+		<p>CSS Property display:inline-block takes into account the white-space in the html. If the white-space between the divs/lis is removed, it works as expected.</p>
+	</header>
+	<body>
+		<p>
+			1. Place two divs adjacent to each other with half of the width of outer container each. 
+
+			<p>
+				If two divs are written in two lines, the behaviour would as shown below -
+			</p>
+		</p>
+		<!-- divs in two lines -->
+		<div class="outer">
+		    <div class="inner-1"></div>
+		    <div class="inner-2"></div>
+		</div>
+		<p>
+			But, the same code written in one line changes the behaviour as shown below -
+		</p>
+		<!-- divs in same line -->
+		<div class="outer">
+		    <div class="inner-1"></div><div class="inner-2"></div>
+		</div>
+
+		<p>
+			2. Place two divs in a container with first div fixed and second should take the space available still should be reponsive. 
+		</p>
+
+		<div class="container">
+		    <div class="inner-left"></div><div class="inner-right"></div>
+		</div>
+		
+		<p> A CSS handy tip
+			<p>
+				An element set to inline-block is very similar to inline as it will set inline element with the natural flow of text except that you are able to set a width and height unlike inline.
+			</p>
+		</p>
+	</body>
+</html>
